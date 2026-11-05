@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Atmosia — a beautiful live weather dashboard.">
+  <title>Atmosia | Weather, beautifully simple</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="nav">
+    <a href="#" class="brand"><span class="logo">☼</span><span>Atmosia</span></a>
+    <span class="tagline">Weather, beautifully simple.</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR DAILY WEATHER COMPANION</p>
+        <h1>Know your <em>sky.</em></h1>
+        <p>Search any city to see its live conditions, today's weather and the last five days at a glance.</p>
+      </div>
+
+      <form id="searchForm" class="search">
+        <span class="search-symbol">⌕</span>
+        <input id="cityInput" type="search" placeholder="Search a city..." autocomplete="off" aria-label="Search city" required>
+        <button id="searchBtn" type="submit">Search</button>
+      </form>
+      <div id="status" class="status" role="status"></div>
+    </section>
+
+    <section id="weatherPanel" class="hidden">
+      <article class="current-card">
+        <div class="topline">
+          <div>
+            <p class="eyebrow">CURRENT WEATHER</p>
+            <h2 id="cityName">—</h2>
+            <p id="localDate" class="muted">—</p>
+          </div>
+          <div id="currentIcon" class="big-icon">☀️</div>
+        </div>
+
+        <div class="temp-line">
+          <div>
+            <span id="temperature" class="temperature">—°</span>
+            <span id="condition" class="condition">—</span>
+          </div>
+          <p class="feels muted">Feels like <strong id="feelsLike">—°</strong></p>
+        </div>
+
+        <div class="metrics">
+          <div class="metric"><span>💧</span><div><small>Humidity</small><strong id="humidity">—</strong></div></div>
+          <div class="metric"><span>≋</span><div><small>Wind</small><strong id="wind">—</strong></div></div>
+          <div class="metric"><span>◉</span><div><small>Pressure</small><strong id="pressure">—</strong></div></div>
+          <div class="metric"><span>◌</span><div><small>Visibility</small><strong id="visibility">—</strong></div></div>
+        </div>
+      </article>
+
+      <section class="forecast">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">RECENT WEATHER</p>
+            <h3>Today & previous 5 days</h3>
+          </div>
+          <span id="timezone" class="muted"></span>
+        </div>
+        <div id="forecastGrid" class="forecast-grid"></div>
+        <p class="note">The previous five days use Open-Meteo's archived forecast data; today's card uses the live forecast response.</p>
+      </section>
+    </section>
+
+    <section id="welcome" class="welcome">
+      <div class="spark">✦</div>
+      <h2>Where are you headed?</h2>
+      <p>Search for a city above to explore its weather.</p>
+      <div class="popular">
+        <button data-city="Bhubaneswar">Bhubaneswar</button>
+        <button data-city="Delhi">Delhi</button>
+        <button data-city="Mumbai">Mumbai</button>
+        <button data-city="Bengaluru">Bengaluru</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>Atmosia · Live weather by Open-Meteo</footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
